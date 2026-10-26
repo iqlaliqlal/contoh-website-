@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SehatBersama — website edukasi kesehatan masyarakat: artikel kesehatan, tips sehat harian, kalkulator IMT, dan edukasi pencegahan penyakit.">
+  <meta name="theme-color" content="#14916F">
+  <title>SehatBersama — Edukasi Kesehatan Masyarakat</title>
+
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Stylesheet utama -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Penanda bahwa JavaScript aktif (dipakai untuk animasi muncul) -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Tautan lompat untuk pengguna keyboard / pembaca layar -->
+  <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container" aria-label="Navigasi utama">
+      <a href="#beranda" class="brand" aria-label="SehatBersama, kembali ke beranda">
+        <img src="assets/img/logo.svg" alt="" width="38" height="38">
+        <span>Sehat<strong>Bersama</strong></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Buka menu navigasi">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a class="nav-link" href="#beranda">Beranda</a></li>
+        <li><a class="nav-link" href="#artikel">Artikel Kesehatan</a></li>
+        <li><a class="nav-link" href="#tips">Tips Sehat</a></li>
+        <li><a class="nav-link" href="#cek-kesehatan">Cek Kesehatan</a></li>
+        <li><a class="nav-link" href="#tentang">Tentang Kami</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="konten">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="beranda" aria-labelledby="heroHeading">
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <span class="eyebrow"><i class="bi bi-heart-pulse" aria-hidden="true"></i> Langkah Kecil untuk Masyarakat yang Lebih Sehat.</span>
+          <h1 id="heroHeading">Mulai Hidup Sehat <span class="text-gradient">dari Sekarang</span></h1>
+          <p class="lead">
+            Kesehatan masyarakat berawal dari kebiasaan sederhana di rumah, sekolah, dan lingkungan sekitar.
+            SehatBersama menghadirkan informasi kesehatan yang ringkas, mudah dipahami, dan dapat diakses
+            kapan saja melalui perangkat digital Anda.
+          </p>
+          <div class="hero-actions">
+            <a href="#artikel" class="btn btn-primary">
+              <i class="bi bi-journal-medical" aria-hidden="true"></i> Jelajahi Informasi
+            </a>
+            <a href="#cek-kesehatan" class="btn btn-outline">
+              <i class="bi bi-calculator" aria-hidden="true"></i> Cek Kesehatan
+            </a>
+          </div>
+          <ul class="hero-points">
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Bahasa sederhana</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Gratis &amp; tanpa login</li>
+            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Ramah ponsel</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="150">
+          <svg viewBox="0 0 520 470" role="img" aria-labelledby="heroSvgTitle heroSvgDesc">
+            <title id="heroSvgTitle">Ilustrasi masyarakat sehat</title>
+            <desc id="heroSvgDesc">Tiga orang berdiri di depan ponsel yang menampilkan grafik detak jantung dan daftar kebiasaan sehat.</desc>
+            <defs>
+              <linearGradient id="hBlob" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#D9F7EC"/>
+                <stop offset="1" stop-color="#DCEEFC"/>
+              </linearGradient>
+              <linearGradient id="hScreen" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2BC59A"/>
+                <stop offset="1" stop-color="#4BA8E0"/>
+              </linearGradient>
+              <filter id="hShadow" x="-20%" y="-20%" width="140%" height="160%">
+                <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#14506A" flood-opacity="0.14"/>
+              </filter>
+            </defs>
+
+            <!-- Latar -->
+            <path d="M262 22c104 0 214 64 224 176 10 108-70 230-206 246C140 460 36 384 26 268 14 140 140 22 262 22z" fill="url(#hBlob)"/>
+            <circle cx="88" cy="96" r="10" fill="#9BE3CB"/>
+            <circle cx="470" cy="96" r="7" fill="#A9D4F5"/>
+            <circle cx="452" cy="360" r="12" fill="#C9F0E2"/>
+
+            <!-- Daun -->
+            <g fill="#3CCB9F" opacity="0.85">
+              <ellipse cx="70" cy="330" rx="16" ry="38" transform="rotate(-28 70 330)"/>
+              <ellipse cx="104" cy="318" rx="13" ry="32" transform="rotate(20 104 318)"/>
+            </g>
+            <rect x="84" y="344" width="6" height="56" rx="3" fill="#1E9C7A"/>
+
+            <!-- Ponsel -->
+            <g filter="url(#hShadow)">
+              <rect x="186" y="58" width="168" height="310" rx="28" fill="#FFFFFF"/>
+            </g>
+            <rect x="198" y="72" width="144" height="282" rx="20" fill="#F4FBF9"/>
+            <rect x="248" y="80" width="44" height="7" rx="3.5" fill="#D5E6E3"/>
+            <rect x="210" y="100" width="120" height="86" rx="14" fill="url(#hScreen)"/>
+            <polyline points="218,146 238,146 248,124 260,168 272,136 282,146 322,146"
+                      fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Daftar kebiasaan -->
+            <g>
+              <rect x="210" y="200" width="120" height="34" rx="10" fill="#FFFFFF"/>
+              <circle cx="228" cy="217" r="8" fill="#3CCB9F"/>
+              <path d="M224 217l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="244" y="212" width="70" height="9" rx="4.5" fill="#D9EDE8"/>
+
+              <rect x="210" y="242" width="120" height="34" rx="10" fill="#FFFFFF"/>
+              <circle cx="228" cy="259" r="8" fill="#3CCB9F"/>
+              <path d="M224 259l3 3 5-6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="244" y="254" width="58" height="9" rx="4.5" fill="#D9EDE8"/>
+
+              <rect x="210" y="284" width="120" height="34" rx="10" fill="#FFFFFF"/>
+              <circle cx="228" cy="301" r="8" fill="none" stroke="#A9D4F5" stroke-width="2.5"/>
+              <rect x="244" y="296" width="64" height="9" rx="4.5" fill="#E3EEF6"/>
+            </g>
+
+            <!-- Kartu melayang: perlindungan -->
+            <g filter="url(#hShadow)">
+              <rect x="44" y="126" width="132" height="66" rx="18" fill="#FFFFFF"/>
+            </g>
+            <circle cx="76" cy="159" r="18" fill="#E2F7F0"/>
+            <path d="M76 147l11 4v8c0 7-5 11-11 13-6-2-11-6-11-13v-8z" fill="#2BC59A"/>
+            <path d="M76 153v10M71 158h10" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+            <rect x="102" y="149" width="58" height="8" rx="4" fill="#CFE9E2"/>
+            <rect x="102" y="163" width="40" height="8" rx="4" fill="#E3EEF6"/>
+
+            <!-- Kartu melayang: air -->
+            <g filter="url(#hShadow)">
+              <rect x="364" y="148" width="118" height="64" rx="18" fill="#FFFFFF"/>
+            </g>
+            <circle cx="394" cy="180" r="17" fill="#E3F1FC"/>
+            <path d="M394 168c6 8 9 12 9 16a9 9 0 0 1-18 0c0-4 3-8 9-16z" fill="#4BA8E0"/>
+            <rect x="418" y="172" width="48" height="8" rx="4" fill="#D6E9F7"/>
+            <rect x="418" y="186" width="32" height="8" rx="4" fill="#E3EEF6"/>
+
+            <!-- Orang 1 -->
+            <g>
+              <path d="M120 450v-58c0-22 16-38 38-38s38 16 38 38v58z" fill="#3CCB9F"/>
+              <circle cx="158" cy="322" r="26" fill="#F2C6A0"/>
+              <path d="M132 318c0-18 12-28 27-28 14 0 26 9 26 24-10-6-20-8-30-6-9 2-16 6-23 10z" fill="#3A2E2A"/>
+            </g>
+            <!-- Orang 2 (tenaga kesehatan) -->
+            <g>
+              <path d="M222 456v-64c0-26 20-44 46-44s46 18 46 44v64z" fill="#FFFFFF" stroke="#CFE3EE" stroke-width="2"/>
+              <path d="M268 348l-14 20 14 30 14-30z" fill="#4BA8E0"/>
+              <path d="M246 390c0 14 6 22 14 24" stroke="#5B7380" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <circle cx="262" cy="416" r="5" fill="#5B7380"/>
+              <circle cx="268" cy="310" r="28" fill="#D9A47E"/>
+              <path d="M240 304c2-20 16-30 30-30 16 0 28 12 26 30-8-8-20-12-30-12s-18 4-26 12z" fill="#2B2422"/>
+            </g>
+            <!-- Orang 3 -->
+            <g>
+              <path d="M338 452v-56c0-22 15-36 35-36s35 14 35 36v56z" fill="#4BA8E0"/>
+              <circle cx="373" cy="330" r="24" fill="#E8B48C"/>
+              <path d="M349 330c-2-20 10-32 26-32 15 0 25 12 22 30-4-10-12-14-22-14-12 0-20 6-26 16z" fill="#5A3B2C"/>
+              <path d="M397 322c8 6 10 20 4 34" stroke="#5A3B2C" stroke-width="8" fill="none" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATISTIK ===================== -->
+    <section class="section section-stats" id="statistik" aria-labelledby="statsHeading">
+      <div class="container">
+        <h2 id="statsHeading" class="sr-only">Statistik SehatBersama</h2>
+        <div class="stats-grid">
+          <article class="card stat-card reveal">
+            <span class="stat-icon icon-mint"><i class="bi bi-journal-text" aria-hidden="true"></i></span>
+            <p class="stat-number"><span data-count="24">24</span><span aria-hidden="true">+</span></p>
+            <p class="stat-label">Artikel edukasi kesehatan</p>
+          </article>
+          <article class="card stat-card reveal" data-delay="100">
+            <span class="stat-icon icon-blue"><i class="bi bi-grid-1x2" aria-hidden="true"></i></span>
+            <p class="stat-number"><span data-count="8">8</span></p>
+            <p class="stat-label">Topik kesehatan dibahas</p>
+          </article>
+          <article class="card stat-card reveal" data-delay="200">
+            <span class="stat-icon icon-mint"><i class="bi bi-lightbulb" aria-hidden="true"></i></span>
+            <p class="stat-number"><span data-count="30">30</span><span aria-hidden="true">+</span></p>
+            <p class="stat-label">Tips kesehatan harian</p>
+          </article>
+          <article class="card stat-card reveal" data-delay="300">
+            <span class="stat-icon icon-blue"><i class="bi bi-megaphone" aria-hidden="true"></i></span>
+            <p class="stat-number"><span data-count="6">6</span></p>
+            <p class="stat-label">Program edukasi kesehatan</p>
+          </article>
+        </div>
+        <p class="stats-note">
+          <i class="bi bi-info-circle" aria-hidden="true"></i>
+          Angka di atas merupakan <strong>data ilustratif</strong> untuk keperluan demonstrasi proyek, bukan statistik resmi atau data kesehatan aktual.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== ARTIKEL ===================== -->
+    <section class="section" id="artikel" aria-labelledby="artikelHeading">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Artikel Kesehatan</span>
+          <h2 id="artikelHeading">Bacaan Singkat untuk Hidup Lebih Sehat</h2>
+          <p>Informasi dasar kesehatan masyarakat yang disusun ringkas agar mudah dipahami oleh keluarga, pelajar, dan mahasiswa.</p>
+        </header>
+
+        <div class="article-grid">
+          <article class="card article-card reveal">
+            <div class="article-media">
+              <img src="assets/img/artikel-lingkungan.svg" width="600" height="340" loading="lazy"
+                   alt="Ilustrasi pohon, rumah, dan tiga tempat sampah terpilah di lingkungan yang bersih">
+            </div>
+            <div class="article-body">
+              <span class="badge badge-mint">Lingkungan</span>
+              <h3>Pentingnya Menjaga Kebersihan Lingkungan</h3>
+              <p>Lingkungan yang bersih mengurangi tempat berkembangnya kuman, nyamuk, dan hewan pembawa penyakit.</p>
+              <button type="button" class="link-btn" data-article="kebersihan" aria-haspopup="dialog">
+                Baca Selengkapnya <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="card article-card reveal" data-delay="100">
+            <div class="article-media">
+              <img src="assets/img/artikel-dbd.svg" width="600" height="340" loading="lazy"
+                   alt="Ilustrasi tempat penampungan air tertutup dan tanda larangan nyamuk">
+            </div>
+            <div class="article-body">
+              <span class="badge badge-blue">Pencegahan</span>
+              <h3>Cara Mencegah Penyakit Demam Berdarah</h3>
+              <p>Gerakan 3M Plus menjadi langkah utama memutus siklus hidup nyamuk Aedes aegypti di sekitar rumah.</p>
+              <button type="button" class="link-btn" data-article="dbd" aria-haspopup="dialog">
+                Baca Selengkapnya <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="card article-card reveal" data-delay="200">
+            <div class="article-media">
+              <img src="assets/img/artikel-gizi.svg" width="600" height="340" loading="lazy"
+                   alt="Ilustrasi piring makan yang terbagi menjadi sayur, buah, makanan pokok, dan lauk pauk">
+            </div>
+            <div class="article-body">
+              <span class="badge badge-mint">Gizi</span>
+              <h3>Pola Makan Seimbang untuk Keluarga</h3>
+              <p>Panduan "Isi Piringku" membantu keluarga mengatur porsi sayur, buah, makanan pokok, dan lauk pauk.</p>
+              <button type="button" class="link-btn" data-article="gizi" aria-haspopup="dialog">
+                Baca Selengkapnya <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="card article-card reveal" data-delay="300">
+            <div class="article-media">
+              <img src="assets/img/artikel-olahraga.svg" width="600" height="340" loading="lazy"
+                   alt="Ilustrasi orang berlari di luar ruangan pada pagi hari">
+            </div>
+            <div class="article-body">
+              <span class="badge badge-blue">Aktivitas Fisik</span>
+              <h3>Pentingnya Aktivitas Fisik dan Olahraga</h3>
+              <p>Bergerak secara teratur menjaga kebugaran jantung, otot, dan kesehatan mental dalam jangka panjang.</p>
+              <button type="button" class="link-btn" data-article="olahraga" aria-haspopup="dialog">
+                Baca Selengkapnya <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TIPS SEHAT HARIAN ===================== -->
+    <section class="section section-tint" id="tips" aria-labelledby="tipsHeading">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Tips Sehat Harian</span>
+          <h2 id="tipsHeading">Sudah Berapa Kebiasaan Sehat Hari Ini?</h2>
+          <p>Centang kebiasaan yang sudah Anda lakukan hari ini. Progres tersimpan di perangkat Anda dan otomatis dimulai ulang setiap hari.</p>
+        </header>
+
+        <div class="tips-layout">
+          <div class="card tips-card reveal">
+            <fieldset>
+              <legend class="sr-only">Checklist tips sehat harian</legend>
+              <ul class="checklist" id="checklist">
+                <li>
+                  <label class="check-item">
+                    <input type="checkbox" value="air">
+                    <span class="check-box" aria-hidden="true"><i class="bi bi-check-lg"></i></span>
+                    <span class="check-icon icon-blue" aria-hidden="true"><i class="bi bi-droplet-half"></i></span>
+                    <span class="check-text">
+                      <strong>Minum air putih yang cukup</strong>
+                      <small>Minum secara teratur sepanjang hari; patokan umum orang dewasa sekitar 8 gelas.</small>
+                    </span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item">
+                    <input type="checkbox" value="cuci-tangan">
+                    <span class="check-box" aria-hidden="true"><i class="bi bi-check-lg"></i></span>
+                    <span class="check-icon icon-mint" aria-hidden="true"><i class="bi bi-moisture"></i></span>
+                    <span class="check-text">
+                      <strong>Mencuci tangan dengan sabun</strong>
+                      <small>Gunakan air mengalir minimal 20 detik, terutama sebelum makan dan setelah dari toilet.</small>
+                    </span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item">
+                    <input type="checkbox" value="gizi">
+                    <span class="check-box" aria-hidden="true"><i class="bi bi-check-lg"></i></span>
+                    <span class="check-icon icon-mint" aria-hidden="true"><i class="bi bi-egg-fried"></i></span>
+                    <span class="check-text">
+                      <strong>Mengonsumsi makanan bergizi seimbang</strong>
+                      <small>Lengkapi piring dengan sayur, buah, makanan pokok, dan lauk pauk.</small>
+                    </span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item">
+                    <input type="checkbox" value="aktivitas">
+                    <span class="check-box" aria-hidden="true"><i class="bi bi-check-lg"></i></span>
+                    <span class="check-icon icon-blue" aria-hidden="true"><i class="bi bi-bicycle"></i></span>
+                    <span class="check-text">
+                      <strong>Melakukan aktivitas fisik secara rutin</strong>
+                      <small>Jalan kaki, bersepeda, atau senam ringan sekitar 30 menit.</small>
+                    </span>
+                  </label>
+                </li>
+                <li>
+                  <label class="check-item">
+                    <input type="checkbox" value="lingkungan">
+                    <span class="check-box" aria-hidden="true"><i class="bi bi-check-lg"></i></span>
+                    <span class="check-icon icon-mint" aria-hidden="true"><i class="bi bi-house-heart"></i></span>
+                    <span class="check-text">
+                      <strong>Menjaga kebersihan lingkungan</strong>
+                      <small>Buang sampah pada tempatnya dan pastikan tidak ada genangan air di sekitar rumah.</small>
+                    </span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+
+          <aside class="card progress-card reveal" data-delay="150" aria-labelledby="progressHeading">
+            <h3 id="progressHeading">Progres Hari Ini</h3>
+            <p class="progress-count" aria-live="polite">
+              <span id="tipsDone">0</span> dari <span id="tipsTotal">5</span> tips selesai
+            </p>
+            <div class="progress-track" id="tipsProgress" role="progressbar"
+                 aria-label="Persentase tips sehat yang selesai"
+                 aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span class="progress-fill" id="tipsBar"></span>
+            </div>
+            <p class="progress-percent"><span id="tipsPercent">0</span>%</p>
+            <p class="progress-message" id="tipsMessage">Yuk, mulai dari satu kebiasaan kecil hari ini.</p>
+            <button type="button" class="btn btn-ghost btn-sm" id="tipsReset">
+              <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i> Atur Ulang
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CEK KESEHATAN (IMT) ===================== -->
+    <section class="section" id="cek-kesehatan" aria-labelledby="bmiHeading">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Cek Kesehatan</span>
+          <h2 id="bmiHeading">Kalkulator Indeks Massa Tubuh (IMT)</h2>
+          <p>Hitung IMT untuk mengetahui gambaran awal status berat badan orang dewasa (usia 18 tahun ke atas).</p>
+        </header>
+
+        <div class="bmi-layout">
+          <form class="card bmi-form reveal" id="bmiForm" novalidate>
+            <div class="form-field">
+              <label for="berat">Berat badan</label>
+              <div class="input-group">
+                <input type="number" id="berat" name="berat" inputmode="decimal"
+                       min="20" max="300" step="0.1" placeholder="Contoh: 60"
+                       aria-describedby="beratHint beratError" required>
+                <span class="input-unit">kg</span>
+              </div>
+              <small class="field-hint" id="beratHint">Rentang yang diterima: 20–300 kg.</small>
+              <small class="field-error" id="beratError" role="alert"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="tinggi">Tinggi badan</label>
+              <div class="input-group">
+                <input type="number" id="tinggi" name="tinggi" inputmode="decimal"
+                       min="100" max="250" step="0.1" placeholder="Contoh: 165"
+                       aria-describedby="tinggiHint tinggiError" required>
+                <span class="input-unit">cm</span>
+              </div>
+              <small class="field-hint" id="tinggiHint">Rentang yang diterima: 100–250 cm.</small>
+              <small class="field-error" id="tinggiError" role="alert"></small>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-calculator" aria-hidden="true"></i> Hitung IMT
+              </button>
+              <button type="reset" class="btn btn-ghost">Hapus</button>
+            </div>
+
+            <p class="formula">Rumus: IMT = berat (kg) ÷ [tinggi (m) × tinggi (m)]</p>
+          </form>
+
+          <div class="card bmi-result reveal" data-delay="150" id="bmiResult" aria-live="polite">
+            <div class="bmi-empty" id="bmiEmpty">
+              <span class="stat-icon icon-blue"><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i></span>
+              <p>Masukkan berat dan tinggi badan, lalu tekan <strong>Hitung IMT</strong> untuk melihat hasilnya.</p>
+            </div>
+
+            <div class="bmi-output" id="bmiOutput" hidden>
+              <p class="bmi-label">IMT Anda</p>
+              <p class="bmi-value" id="bmiValue">0</p>
+              <span class="bmi-category" id="bmiCategory">-</span>
+              <p class="bmi-desc" id="bmiDesc"></p>
+
+              <div class="bmi-scale" aria-hidden="true">
+                <div class="scale-bar">
+                  <span class="seg seg-1"></span><span class="seg seg-2"></span><span class="seg seg-3"></span><span class="seg seg-4"></span><span class="seg seg-5"></span>
+                  <span class="scale-marker" id="bmiMarker"></span>
+                </div>
+                <div class="scale-labels"><span>15</span><span>18,5</span><span>25</span><span>27</span><span>35</span></div>
+              </div>
+            </div>
+
+            <table class="bmi-table">
+              <caption>Klasifikasi IMT dewasa (Kementerian Kesehatan RI)</caption>
+              <thead><tr><th scope="col">IMT</th><th scope="col">Kategori</th></tr></thead>
+              <tbody>
+                <tr><td>&lt; 17,0</td><td>Kurus (kekurangan berat badan tingkat berat)</td></tr>
+                <tr><td>17,0 – 18,4</td><td>Kurus (kekurangan berat badan tingkat ringan)</td></tr>
+                <tr><td>18,5 – 25,0</td><td>Normal</td></tr>
+                <tr><td>25,1 – 27,0</td><td>Gemuk (kelebihan berat badan tingkat ringan)</td></tr>
+                <tr><td>&gt; 27,0</td><td>Gemuk (kelebihan berat badan tingkat berat)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="notice reveal">
+          <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+          <p>
+            <strong>Penting:</strong> IMT hanyalah alat skrining awal, bukan diagnosis medis. IMT tidak membedakan massa otot dan lemak,
+            sehingga interpretasinya berbeda pada anak-anak dan remaja (menggunakan IMT menurut umur), ibu hamil, atlet,
+            lansia, serta kondisi kesehatan tertentu. Untuk penilaian yang tepat, konsultasikan dengan tenaga kesehatan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PENCEGAHAN PENYAKIT ===================== -->
+    <section class="section section-tint" id="pencegahan" aria-labelledby="pencegahanHeading">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Edukasi Pencegahan</span>
+          <h2 id="pencegahanHeading">Cegah Penyakit yang Umum di Masyarakat</h2>
+          <p>Banyak penyakit dapat dicegah atau dikendalikan melalui perubahan kebiasaan sehari-hari dan pemeriksaan kesehatan secara rutin.</p>
+        </header>
+
+        <div class="prevent-grid">
+          <article class="card prevent-card reveal">
+            <span class="prevent-icon icon-mint"><i class="bi bi-bug" aria-hidden="true"></i></span>
+            <h3>Demam Berdarah Dengue</h3>
+            <p>Disebabkan virus dengue yang ditularkan melalui gigitan nyamuk <em>Aedes aegypti</em>, yang berkembang biak di air jernih yang tergenang.</p>
+            <ul class="prevent-list">
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Menguras dan menyikat tempat penampungan air secara berkala.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Menutup rapat wadah air di dalam dan luar rumah.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Mendaur ulang barang bekas yang dapat menampung air.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Memakai kelambu atau losion antinyamuk.</li>
+            </ul>
+          </article>
+
+          <article class="card prevent-card reveal" data-delay="100">
+            <span class="prevent-icon icon-blue"><i class="bi bi-heart-pulse" aria-hidden="true"></i></span>
+            <h3>Hipertensi</h3>
+            <p>Tekanan darah tinggi sering tidak bergejala, padahal dapat meningkatkan risiko penyakit jantung, stroke, dan gangguan ginjal.</p>
+            <ul class="prevent-list">
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Membatasi konsumsi garam dan makanan olahan tinggi natrium.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Memeriksa tekanan darah secara rutin.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Aktif bergerak dan menjaga berat badan.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Tidak merokok serta mengelola stres dengan baik.</li>
+            </ul>
+          </article>
+
+          <article class="card prevent-card reveal" data-delay="200">
+            <span class="prevent-icon icon-mint"><i class="bi bi-droplet" aria-hidden="true"></i></span>
+            <h3>Diabetes Melitus</h3>
+            <p>Diabetes tipe 2 berkaitan erat dengan pola makan, berat badan, dan aktivitas fisik. Pola hidup CERDIK membantu menurunkan risikonya.</p>
+            <ul class="prevent-list">
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Cek kesehatan dan kadar gula darah secara berkala.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Enyahkan asap rokok dan rajin beraktivitas fisik.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Diet seimbang dengan membatasi gula dan minuman manis.</li>
+              <li><i class="bi bi-check2" aria-hidden="true"></i> Istirahat cukup dan kelola stres.</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="prevent-note reveal">
+          <i class="bi bi-hospital" aria-hidden="true"></i>
+          Jika mengalami gejala seperti demam tinggi mendadak, sakit kepala hebat, atau rasa haus dan sering buang air kecil yang tidak biasa,
+          segera periksakan diri ke fasilitas pelayanan kesehatan terdekat.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== TENTANG ===================== -->
+    <section class="section" id="tentang" aria-labelledby="tentangHeading">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <span class="section-tag">Tentang Kami</span>
+          <h2 id="tentangHeading">Teknologi Digital untuk Literasi Kesehatan</h2>
+          <p>
+            SehatBersama merupakan proyek edukasi yang dikembangkan untuk mendukung pemanfaatan teknologi kesehatan digital
+            dalam meningkatkan literasi kesehatan masyarakat. Melalui media web yang ringan dan mudah diakses, informasi
+            kesehatan dasar disajikan secara ringkas, visual, dan interaktif.
+          </p>
+          <p>
+            Website ini dibuat sebagai tugas mata kuliah <strong>Teknologi Kesehatan Digital</strong> dan ditujukan bagi
+            masyarakat umum, mahasiswa, serta pelajar.
+          </p>
+          <ul class="about-points">
+            <li><i class="bi bi-book" aria-hidden="true"></i> Edukasi berbasis informasi kesehatan dasar</li>
+            <li><i class="bi bi-phone" aria-hidden="true"></i> Dapat diakses melalui laptop maupun ponsel</li>
+            <li><i class="bi bi-shield-check" aria-hidden="true"></i> Tidak mengumpulkan data pribadi pengguna</li>
+          </ul>
+        </div>
+
+        <div class="card disclaimer-card reveal" data-delay="150">
+          <span class="stat-icon icon-blue"><i class="bi bi-info-circle" aria-hidden="true"></i></span>
+          <h3>Pernyataan Penting</h3>
+          <p>
+            SehatBersama adalah <strong>proyek edukasi mahasiswa</strong>, bukan layanan diagnosis, pengobatan, atau
+            konsultasi medis profesional. Website ini tidak berafiliasi dengan rumah sakit, puskesmas, maupun tenaga
+            kesehatan mana pun.
+          </p>
+          <p>
+            Seluruh informasi bersifat umum dan tidak menggantikan saran tenaga kesehatan. Untuk keluhan kesehatan,
+            silakan menghubungi fasilitas pelayanan kesehatan terdekat.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#beranda" class="brand brand-light" aria-label="SehatBersama, kembali ke beranda">
+          <img src="assets/img/logo.svg" alt="" width="38" height="38">
+          <span>Sehat<strong>Bersama</strong></span>
+        </a>
+        <p>Website edukasi kesehatan masyarakat. Langkah kecil untuk masyarakat yang lebih sehat.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Navigasi footer">
+        <h3>Navigasi</h3>
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#artikel">Artikel Kesehatan</a></li>
+          <li><a href="#tips">Tips Sehat</a></li>
+          <li><a href="#cek-kesehatan">Cek Kesehatan</a></li>
+          <li><a href="#pencegahan">Pencegahan Penyakit</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Kontak (contoh)</h3>
+        <ul class="contact-list">
+          <li><i class="bi bi-envelope" aria-hidden="true"></i> halo@sehatbersama.example</li>
+          <li><i class="bi bi-telephone" aria-hidden="true"></i> +62 800-0000-0000</li>
+          <li><i class="bi bi-geo-alt" aria-hidden="true"></i> Indonesia</li>
+        </ul>
+        <p class="footer-small">Kontak di atas merupakan data contoh untuk keperluan proyek.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year">2026</span> SehatBersama. Proyek edukasi mahasiswa — Mata Kuliah Teknologi Kesehatan Digital.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tombol kembali ke atas -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Kembali ke atas halaman">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Modal artikel (diisi oleh script.js) -->
+  <dialog class="modal" id="articleModal" aria-labelledby="modalTitle">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <span class="badge badge-mint" id="modalCategory">Kategori</span>
+        <button type="button" class="modal-close" id="modalClose" aria-label="Tutup artikel">
+          <i class="bi bi-x-lg" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="modal-scroll">
+        <h2 id="modalTitle">Judul Artikel</h2>
+        <p class="modal-meta" id="modalMeta"></p>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

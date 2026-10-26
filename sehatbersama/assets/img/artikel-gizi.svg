@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7F8F2"/><stop offset="1" stop-color="#E8F4FD"/></linearGradient></defs>
+  <rect width="600" height="340" fill="url(#bg)"/>
+  <circle cx="300" cy="170" r="132" fill="#FFFFFF" stroke="#D6E9E4" stroke-width="4"/>
+  <path d="M300 170L300 60A110 110 0 0 1 395.26 225Z" fill="#F2C14E"/>
+  <path d="M300 170L395.26 225A110 110 0 0 1 300 280Z" fill="#E06A5A"/>
+  <path d="M300 170L300 280A110 110 0 0 1 204.74 115Z" fill="#3CCB9F"/>
+  <path d="M300 170L204.74 115A110 110 0 0 1 300 60Z" fill="#F29A4A"/>
+  <path d="M300 170L300 60M300 170L395.26 225M300 170L300 280M300 170L204.74 115" stroke="#FFFFFF" stroke-width="4"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    <text x="352" y="138">Pokok</text>
+    <text x="330" y="232">Lauk</text>
+    <text x="246" y="204">Sayur</text>
+    <text x="268" y="124">Buah</text>
+  </g>
+  <rect x="120" y="70" width="10" height="200" rx="5" fill="#9FB6BE"/>
+  <path d="M110 70v40c0 10 25 10 25 0V70" fill="none" stroke="#9FB6BE" stroke-width="6" stroke-linecap="round"/>
+  <rect x="470" y="130" width="10" height="140" rx="5" fill="#9FB6BE"/>
+  <ellipse cx="475" cy="100" rx="16" ry="30" fill="#9FB6BE"/>
+  <path d="M520 190h44l-6 80h-32z" fill="#D6ECFA" stroke="#4BA8E0" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M524 220h36l-4 48h-28z" fill="#4BA8E0" opacity="0.7"/>
+</svg>
